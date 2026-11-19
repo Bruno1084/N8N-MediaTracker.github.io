@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de privacidad – Art Tracker</title>
+  <meta name="description" content="Política de privacidad de Art Tracker, una automatización de uso personal que accede a Gmail y Google Sheets del propio autor.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Política de privacidad</h1>
+    <p>Art Tracker · Última actualización: 18 de noviembre de 2026</p>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="privacy.html">Política de privacidad</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="note">
+      Art Tracker es un proyecto de <strong>uso personal</strong>. Lo usa únicamente su desarrollador, sobre su propia cuenta de Google. No se ofrece a otras personas y no recopila ni procesa datos de terceros.
+    </div>
+
+    <h2>1. Quién es el responsable</h2>
+    <p>
+      El responsable es <strong>TU_NOMBRE</strong>, único usuario del sistema. Para cualquier consulta: <a href="mailto:TU_CORREO">TU_CORREO</a>.
+    </p>
+
+    <h2>2. A qué datos accede el sistema</h2>
+    <p>Con la autorización de su propietario, el sistema accede a:</p>
+    <ul>
+      <li><strong>Gmail:</strong> mails que el propio autor se envía con pedidos sobre su registro. Se leen para interpretarlos, se envían respuestas al mismo hilo y se marcan como leídos. El flujo filtra por remitente y solo procesa mensajes enviados desde la cuenta del autor.</li>
+      <li><strong>Google Sheets / Drive:</strong> la planilla personal donde se guarda el registro de obras. Se lee y se agregan filas.</li>
+    </ul>
+    <p>No se accede a contactos, calendario, fotos ni a ningún otro dato de la cuenta de Google.</p>
+
+    <h2>3. Para qué se usan los datos</h2>
+    <p>
+      Únicamente para ejecutar el registro personal: interpretar un pedido, buscar o agregar una obra en la planilla y responder con el resultado. No se usan para publicidad, perfilado, ni con ningún otro fin.
+    </p>
+
+    <h2>4. Con quién se comparten</h2>
+    <p>Los datos no se venden ni se ceden a terceros. Hay dos servicios que participan del procesamiento:</p>
+    <ul>
+      <li><strong>OpenAI:</strong> el texto del mail con el pedido (por ejemplo, «agregá la película Rush») se envía a la API de OpenAI para convertirlo en una estructura de datos. No se envía el resto del contenido de la cuenta.</li>
+      <li><strong>Amazon Web Services:</strong> el sistema corre en un servidor propio alojado en AWS, que procesa los datos y guarda su historial de ejecuciones.</li>
+    </ul>
+
+    <h2>5. Declaración sobre datos de las APIs de Google</h2>
+    <p>
+      El uso y la transferencia a cualquier otra app de la información recibida de las APIs de Google respetarán la
+      <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de datos de usuario de los servicios de las APIs de Google</a>,
+      incluidos los requisitos de uso limitado.
+    </p>
+
+    <h2>6. Almacenamiento y seguridad</h2>
+    <ul>
+      <li>Las credenciales de acceso (tokens de Google y clave de la API de OpenAI) se guardan cifradas en el servidor.</li>
+      <li>El panel de administración no está expuesto a internet: solo se accede mediante conexión SSH autenticada con clave.</li>
+      <li>El historial de ejecuciones del sistema se elimina automáticamente a las dos semanas.</li>
+      <li>La planilla permanece en la cuenta de Google del autor, bajo sus propios controles de acceso.</li>
+    </ul>
+
+    <h2>7. Conservación y eliminación</h2>
+    <p>
+      Los datos del registro se conservan mientras el autor los mantenga en su planilla. El acceso de Art Tracker puede revocarse en cualquier momento desde la cuenta de Google, en Seguridad → Aplicaciones con acceso a la cuenta. Al revocarlo, el sistema deja de poder leer el correo y la planilla.
+    </p>
+
+    <h2>8. Cambios en esta política</h2>
+    <p>
+      Si el proyecto cambia de alcance, esta página se actualizará con la nueva fecha en el encabezado.
+    </p>
+  </main>
+
+  <footer>
+    <p>Art Tracker · Proyecto personal sin fines comerciales · Contacto: <a href="mailto:sosabruno0013@gmail.com">sosabruno0013@gmail.com</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Art Tracker – Registro personal de películas, series, mangas y libros</title>
+  <meta name="description" content="Art Tracker es una automatización de uso personal que registra películas, series, mangas, cómics y libros en una planilla de Google Sheets a partir de mails escritos en lenguaje natural.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Art Tracker</h1>
+    <p>Registro personal de películas, series, mangas, cómics y libros, controlado por mail.</p>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="privacy.html">Política de privacidad</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="note">
+      Art Tracker es un proyecto de <strong>uso personal</strong>. Lo usa una sola persona, su desarrollador, sobre su propia cuenta de Google. No es un servicio público y no ofrece registro de usuarios.
+    </div>
+
+    <h2>¿Qué es?</h2>
+    <p>
+      Es una automatización que mantiene una planilla de Google Sheets con todo lo que su autor mira y lee: películas, series, mangas, cómics y libros. En lugar de abrir la planilla y editarla a mano, el autor se envía un mail en lenguaje natural y el sistema se encarga del resto.
+    </p>
+
+    <h2>¿Qué puede hacer?</h2>
+    <ul>
+      <li><strong>Agregar una obra.</strong> Ejemplo: <code>Agregá la película Rush como pendiente</code>. El sistema la registra en la pestaña correspondiente, completa el género si lo conoce y confirma por mail.</li>
+      <li><strong>Consultar si ya está registrada.</strong> Ejemplo: <code>¿Leí Cien años de soledad?</code>. Busca en todas las pestañas. Si no la encuentra, pregunta si debe agregarla, y una respuesta afirmativa la agrega.</li>
+      <li><strong>Listar.</strong> Ejemplo: <code>Dame los mangas pendientes</code>. Responde por mail con la lista filtrada por tipo y estado.</li>
+    </ul>
+    <p>Antes de agregar una obra, el sistema verifica que no esté duplicada.</p>
+
+    <h2>¿Cómo funciona?</h2>
+    <ol>
+      <li>El autor envía un mail a su propia cuenta de Gmail con el pedido.</li>
+      <li>Un flujo de trabajo detecta el mail nuevo. Solo se procesan los mensajes enviados desde la cuenta del autor.</li>
+      <li>El texto del pedido se envía a un modelo de lenguaje, que lo traduce a una estructura de datos: qué acción se pide, qué obra, de qué tipo y en qué estado.</li>
+      <li>El flujo lee la planilla de Google Sheets, aplica las reglas (búsqueda, duplicados, identificadores) y, si corresponde, agrega una fila.</li>
+      <li>El sistema responde al mismo mail con el resultado. Si algo falla, avisa en lugar de dejar el error sin notificar.</li>
+    </ol>
+
+    <h2>Tecnologías</h2>
+    <ul>
+      <li><strong>n8n</strong>: plataforma de automatización de flujos de trabajo, autoalojada.</li>
+      <li><strong>Gmail API</strong>: lectura de los pedidos y envío de las respuestas.</li>
+      <li><strong>Google Sheets API</strong>: lectura y escritura de la planilla del autor.</li>
+      <li><strong>OpenAI API</strong>: interpretación del texto del pedido.</li>
+      <li><strong>Amazon Web Services (EC2) y Docker</strong>: servidor donde corre el sistema.</li>
+    </ul>
+
+    <h2>Datos y privacidad</h2>
+    <p>
+      El sistema solo accede a la cuenta de Google de su autor y a su propia planilla, y no procesa datos de terceros. El detalle está en la <a href="privacy.html">política de privacidad</a>.
+    </p>
+  </main>
+
+  <footer>
+    <p>Art Tracker · Proyecto personal sin fines comerciales · Contacto: <a href="mailto:sosabruno0013@gmail.com">sosabruno0013@gmail.com</a></p>
+  </footer>
+</body>
+</html>
